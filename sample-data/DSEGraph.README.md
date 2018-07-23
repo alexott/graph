@@ -15,4 +15,5 @@ dse gremlin-console -e dse-graph-schema.groovy
 <path_to_dgl>/graphloader ~/work/graph/flights-loader.groovy -graph Flights -address localhost
 ```
 
-**Caveats**: Either of previous command loads data successfully, but there is a slight difference comparing to the use of TinkerGraph - the IDs for vertices & edges are automatically generated during the load, so you can't use `g.V(3)`, but you need to use `g.V().has('airport', 'id', '3')` instead.
+**Caveats**: Either of previous command loads data successfully, but there is a slight difference comparing to the use of TinkerGraph - the IDs for vertices & edges are automatically generated during the load, so you can't use `g.V(3)`, but you need to use `g.V().has('airport', 'id', '3')` instead.  This is a limitation of the GraphML support in the DSE Graph.
+
